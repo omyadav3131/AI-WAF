@@ -1,0 +1,15 @@
+aiwaf_env/
+.venv/
+__pycache__/
+*.py[cod]
+*.pt
+datasets/processed/
+datasets/raw/
+datasets/benchmark/
+.env
+*.env
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
+.ipynb_checkpoints/

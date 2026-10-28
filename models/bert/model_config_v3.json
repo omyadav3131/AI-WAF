@@ -1,0 +1,56 @@
+{
+  "model_name": "bert-base-uncased",
+  "version": "v3",
+  "n_classes": 3,
+  "max_len": 128,
+  "dropout": 0.1,
+  "label_map": {
+    "0": "BENIGN",
+    "1": "SQLi",
+    "2": "XSS"
+  },
+  "learning_rate": 2e-05,
+  "batch_size": 32,
+  "epochs": 4,
+  "weight_decay": 0.01,
+  "train_size": 20087,
+  "val_size": 4304,
+  "test_size": 4309,
+  "best_val_macro_f1": 0.9994,
+  "test_macro_f1": 0.9993,
+  "preprocessing": {
+    "url_decode": true,
+    "html_decode": true,
+    "whitespace_norm": true
+  },
+  "v3_improvements": [
+    "paired_benign_attack_templates",
+    "matched_request_lengths_across_classes",
+    "adversarial_benign_samples_with_sql_like_words",
+    "no_csic_benign_traffic",
+    "payload_split_before_template_application",
+    "false_positive_rate_reported"
+  ],
+  "training_history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.16428938257110537,
+      "val_f1": 0.9972119281215223
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.009257900123936747,
+      "val_f1": 0.9990841011795073
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.0013526059323525099,
+      "val_f1": 0.998874765777917
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.0002911289326672718,
+      "val_f1": 0.9993722013135887
+    }
+  ]
+}

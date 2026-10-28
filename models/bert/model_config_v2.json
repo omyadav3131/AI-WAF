@@ -1,0 +1,25 @@
+{
+  "model_name": "bert-base-uncased",
+  "version": "v2",
+  "n_classes": 3,
+  "max_len": 128,
+  "label_map": {
+    "0": "BENIGN",
+    "1": "SQLi",
+    "2": "XSS"
+  },
+  "learning_rate": 2e-05,
+  "batch_size": 32,
+  "epochs": 3,
+  "weight_decay": 0.01,
+  "train_size": 42763,
+  "val_size": 9143,
+  "test_size": 38808,
+  "test_macro_f1": 1.0,
+  "improvements": [
+    "fixed_train_test_split_csic_boundaries",
+    "varied_8_http_templates",
+    "deduplication",
+    "leakage_removed"
+  ]
+}
