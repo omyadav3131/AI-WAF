@@ -8,6 +8,12 @@
 
 AI-WAF is a research prototype that classifies HTTP requests as benign, SQL injection (SQLi), or cross-site scripting (XSS). It uses a fine-tuned BERT model to analyze request text and provides a FastAPI inference service with a Streamlit dashboard.
 
+## Demo
+
+| Benign request | SQL Injection | XSS |
+|---|---|---|
+| ![Benign request](docs/images/demo_benign.png) | ![SQL Injection](docs/images/demo_sqli.png) | ![XSS](docs/images/demo_xss.png) |
+
 ## The Problem
 
 Traditional web application firewalls often rely on signatures, rules, and pattern matching. Attackers can encode or obfuscate payloads in ways that evade exact string and rule-based checks, while aggressive rules can also block legitimate traffic.
@@ -46,6 +52,10 @@ Streamlit Dashboard
 | BERT v3 | Kaggle Paired | 0.9993 |
 
 BERT v3 fixed the false positive problem that existed in v2.
+
+## Limitations
+
+- Stacked-query payloads such as `'; DROP TABLE'` can be missed (dashboard batch test: 14/15).
 
 ## Key Research Contributions
 
